@@ -22,7 +22,6 @@
     "lint": "eslint server",
     "test": "nodemon server/app.js",
     "dev": "nodemon server/app.js",
-    "build": "cd client",
     "start": "node server/app.js"
   },
   "lint-staged": {
@@ -44,5 +43,8 @@
     "path": "^0.12.7",
     "sqlite3": "^5.0.8",
     "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "concurrently": "^7.2.1"
   }
 }
