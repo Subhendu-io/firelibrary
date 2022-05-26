@@ -140,7 +140,7 @@ const EditModal = (props) => {
               </div>
               <div className="col-md-12 my-2">
                 <FormGroup>
-                  <FormControlLabel name="favorite" control={<Checkbox checked={ebook.favorite === 1 ? true : false} onChange={handleEbookChange} />}  label="To to favorites" />
+                  <FormControlLabel name="favorite" control={<Checkbox checked={ebook.favorite === 1 ? true : false} onChange={handleEbookChange} />}  label="Add to favorites" />
                 </FormGroup>
               </div>
             </div>
