@@ -12,3 +12,8 @@ npm install
 ```
 npm run start
 ```
+
+3. Open the browser and go to the link bellow
+```
+http://localhost:5000
+```
