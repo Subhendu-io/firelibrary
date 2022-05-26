@@ -1,6 +1,39 @@
 .fl-right{
   float: right;
 }
+.bgx-primary{
+  background-color: #1876d1;
+}
+.bgx-danger{
+  background-color: #d32f2f;
+}
 .app-add-button{
   padding: 10px 25px;
+}
+tbody {
+  border-top: 3px solid #eef1f3 !important;
+}
+.btn {
+  border-radius: 8px;
+}
+.card-ebook {
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 0px 8px 0px rgb(0, 0, 0, 0.1);
+}
+.card-ebook .card-ebook-genre{
+  color: #7598cd;
+  font-weight: 500;
+}
+.card-ebook .card-ebook-title{
+  margin-bottom: 2px;
+  font-size: 1.5rem;
+  color: #363636;
+}
+.card-ebook .card-ebook-author{
+  color: gray;
+}
+.card-ebook .card-footer{
+  background-color: rgb(0 0 0 / 2%);
+  border-top: 1px solid rgba(0,0,0,.05);
 }

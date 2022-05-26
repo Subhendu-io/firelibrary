@@ -13,7 +13,7 @@ import Rating from '@mui/material/Rating';
 import Checkbox from '@mui/material/Checkbox';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
-
+import Button from '@mui/material/Button';
 
 import ApiService from '../services/ApiService';
 import API_ROUTES from '../configs/api.routes';
@@ -77,8 +77,8 @@ const EditModal = (props) => {
   return (
     <Modal {...props}>
       <Box sx={style}>
-        <div className='modal-header bg-primary text-white'>
-          <h5 className='m-0'>{props.ebook ? props.ebook.title : 'Create new Ebook'}</h5>
+        <div className='modal-header bgx-primary text-white'>
+          <h5 className='m-0'>{props.ebook ? props.ebook.title : 'Create new ebook'}</h5>
         </div>
         <div className='modal-body'>
           <div className='container-fluid'>
@@ -149,8 +149,12 @@ const EditModal = (props) => {
         </div>
 
         <div className='modal-footer'>
-          <button onClick={() => onSubmit()} className="btn btn-primary">Save</button>
-          <button onClick={() => props.onClose(false)} className="btn btn-default mx-2">Cancel</button>
+          <Button onClick={() => onSubmit()}  variant="contained" color="primary">
+            Save
+          </Button>
+          <Button className="mx-2" onClick={() => props.onClose(false)}>
+            Cancel
+          </Button>
         </div>
       </Box>
     </Modal>

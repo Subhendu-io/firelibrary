@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import Rating from '@mui/material/Rating';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import IconButton from '@mui/material/IconButton';
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 import Ebook from '../models/Ebook';
 import EditModal from './EditModal';
@@ -42,8 +45,12 @@ export default function BookCard(props) {
           )}
         </td>
         <td>
-          <button onClick={() => setOpenEdit(true)} className="btn btn-primary">Edit</button>
-          <button onClick={() => setOpenDelete(true)} className="btn btn-danger mx-2">Delete</button>
+          <IconButton onClick={() => setOpenEdit(true)} color="primary" aria-label="edit">
+            <EditIcon />
+          </IconButton>
+          <IconButton onClick={() => setOpenDelete(true)} color="error" aria-label="delete">
+            <DeleteIcon />
+          </IconButton>
         </td>
         <DeleteModal open={openDelete} ebook={props.ebook} onClose={handleCloseDelete} />
         <EditModal open={openEdit} ebook={props.ebook} onClose={handleCloseEdit} />

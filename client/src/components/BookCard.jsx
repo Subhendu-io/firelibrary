@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import Rating from '@mui/material/Rating';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import Button from '@mui/material/Button';
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 import Ebook from '../models/Ebook';
 import EditModal from './EditModal';
@@ -28,21 +31,25 @@ export default function BookCard(props) {
 
     return (
         <div className="col-lg-3 col-md-4 col-sm-6 my-3">
-            <div className="card">
+            <div className="card card-ebook">
                 <div className="card-body">
                     {props.ebook.favorite === 1 ? (
                         <span className='fl-right'><FavoriteIcon sx={{ color: 'red' }} /></span>
                     ) : (
                         <span className='fl-right'><FavoriteBorderIcon sx={{ color: 'action' }} /></span>
                     )}
-                    <p className="card-text">{props.ebook.genre}</p>
-                    <h5 className="card-title">{props.ebook.title}</h5>
-                    <p className="card-text">by {props.ebook.author}</p>
+                    <p className="card-text card-ebook-genre">{props.ebook.genre}</p>
+                    <h5 className="card-title card-ebook-title">{props.ebook.title}</h5>
+                    <p className="card-text card-ebook-author">by <b>{props.ebook.author}</b></p>
                     <Rating name="read-only" value={props.ebook.review} readOnly />
                 </div>
                 <div className='card-footer mt-4'>
-                    <button onClick={() => setOpenEdit(true)} className="btn btn-primary">Edit</button>
-                    <button onClick={() => setOpenDelete(true)} className="btn btn-danger mx-2">Delete</button>
+                    <Button onClick={() => setOpenEdit(true)} startIcon={<EditIcon />} color="primary">
+                        Edit
+                    </Button>
+                    <Button className="mx-2" onClick={() => setOpenDelete(true)} startIcon={<DeleteIcon />} color="error">
+                        Delete
+                    </Button>
                 </div>
             </div>
             <DeleteModal open={openDelete} ebook={props.ebook} onClose={handleCloseDelete} />

@@ -1,5 +1,7 @@
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+
 import ApiService from '../services/ApiService';
 import API_ROUTES from '../configs/api.routes';
 
@@ -26,7 +28,7 @@ const DeleteModal = (props) => {
   return (
     <Modal {...props}>
       <Box sx={style}>
-        <div className='modal-header bg-danger text-white'>
+        <div className='modal-header bgx-danger text-white'>
           <h5 className='m-0'>Delete "{props.ebook.title}"</h5>
         </div>
         <div className='modal-body'>
@@ -34,8 +36,12 @@ const DeleteModal = (props) => {
         </div>
 
         <div className='modal-footer'>
-          <button onClick={() => onDelete(props.ebook)} className="btn btn-danger">Delete</button>
-          <button onClick={() => props.onClose(false)} className="btn btn-default mx-2">Cancel</button>
+          <Button onClick={() => onDelete(props.ebook)} variant="contained" color="error">
+              Delete
+          </Button>
+          <Button className="mx-2" onClick={() => props.onClose(false)}>
+              Cancel
+          </Button>
         </div>
       </Box>
     </Modal>

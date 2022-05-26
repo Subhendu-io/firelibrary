@@ -10,6 +10,7 @@ import ViewListIcon from '@mui/icons-material/ViewList';
 import ViewModuleIcon from '@mui/icons-material/ViewModule';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import Button from '@mui/material/Button';
 
 import Header from '../layouts/Header';
 import Footer from '../layouts/Footer';
@@ -53,10 +54,12 @@ export default function Album() {
                 </div>
                 <div className="col-sm-6">
                     <ToggleButtonGroup
+                        size="small"
                         className="fl-right"
                         value={viewType}
                         exclusive
                         onChange={handleViewChange}
+                        color="primary"
                         >
                         <ToggleButton value="TABLE" aria-label="list">
                             <ViewListIcon />
@@ -65,9 +68,9 @@ export default function Album() {
                             <ViewModuleIcon />
                         </ToggleButton>
                     </ToggleButtonGroup>
-                    <button onClick={() => setOpenEdit(true)} className="btn btn-primary fl-right mx-3 app-add-button">
-                        <AddIcon /> Add new ebook
-                    </button>
+                    <Button className="fl-right mx-4" onClick={() => setOpenEdit(true)} startIcon={<AddIcon />} size="large">
+                        Add new ebook
+                    </Button>
                 </div>
             </div>
             {ebooks.length > 0 ? (

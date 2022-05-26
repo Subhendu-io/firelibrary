@@ -1,7 +1,7 @@
 import { create } from 'axios';
 
 const api = create({
-    baseURL: 'http://localhost:5000/api/v1'
+    baseURL: window.origin === 'http://localhost:3000' ? 'http://localhost:5000/api/v1' : window.origin + '/api/v1'
 });
 
 const ApiService = {
